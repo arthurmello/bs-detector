@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BS Detector</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom, #f7f2ff, #ffeafd);
+            color: #333;
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+            border: 1px solid #d8c9ff;
+            border-radius: 12px;
+            box-shadow: 0 0 12px rgba(150, 120, 200, 0.35);
+        }
+        h1 {
+            font-family: "Comic Sans MS", cursive, sans-serif;
+            text-align: center;
+            color: #663399;
+            text-shadow: 1px 1px 0px #fff;
+            margin-bottom: 0;
+        }
+        .status {
+            text-align: center;
+            font-size: 0.85em;
+            color: #8855aa;
+            margin-top: 4px;
+        }
+        textarea {
+            width: 100%;
+            border: 2px solid #cc99ff;
+            border-radius: 6px;
+            padding: 10px;
+            background: #fffdfc url('https://www.transparenttextures.com/patterns/lined-paper.png');
+            font-family: 'Courier New', monospace;
+            font-size: 14px;
+        }
+        button {
+            margin-top: 10px;
+            padding: 8px 18px;
+            border: none;
+            border-radius: 14px;
+            background: linear-gradient(to bottom, #ff99cc, #ff66aa);
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+            box-shadow: 0 3px 0 #cc4f88;
+        }
+        button:hover {
+            transform: translateY(-1px);
+        }
+        .result {
+            margin-top: 20px;
+            padding: 12px;
+            border: 1px solid #e6b3ff;
+            background: #fff7ff;
+            border-radius: 8px;
+        }
+        .sparkle {
+            font-size: 1.1em;
+            color: #ff66cc;
+        }
+        .top8 {
+            margin-top: 18px;
+            font-size: 0.85em;
+            color: #aa66cc;
+        }
+    </style>
+</head>
+<body>
+    <h1>BS Detector ✦</h1>
+
+    <p style="text-align: left;">Paste your favorite LinkedIn post below and find out how much BS is in it.</p>
+
+    <form method="POST">
+        <textarea name="text" rows="15" cols="80">{{ text }}</textarea>
+        <br>
+        <p class="status" style="text-align: left;"><em>The BS score is calculated using a cutting-edge quantum AI algorithm,
+            fine-tuned using agentic MCP.</em></p>
+        <button type="submit">Get BS Score</button>
+    </form>
+
+    {% if score is not none %}
+    <div class="result">
+        <p><span class="sparkle">✦</span> BS Score: <strong>{{ score }}%</strong></p>
+        <p>{{ description }}</p>
+
+        <div class="top8">
+            <p><strong>Top BS Sources:</strong></p>
+            <ol>
+                <li>That One Guy on LinkedIn</li>
+                <li>A Random Podcast Host</li>
+                <li>A TED Talk from 2012</li>
+                <li>Someone Selling a Course</li>
+                <li>An AI That Shall Not Be Named</li>
+                <li>You, Sometimes</li>
+            </ol>
+        </div>
+    </div>
+    {% endif %}
+</body>
+</html>
