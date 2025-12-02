@@ -155,15 +155,15 @@ def calculate_bs_score(text: str) -> float:
 
 
 def generate_bs_text(score: float) -> str:
-    """Generate a funny text description based on the BS score."""
+    """Generate a text description based on the BS score."""
     if score < 0.25:
-        return "Surprisingly concrete! You're either an actual expert or a very convincing liar."
+        return "Shockingly solid. Are you sure you’re not just copy-pasting from a textbook?"
     elif score < 0.50:
-        return "A bit wobbly, but still mostly tethered to reality."
+        return "Mostly believable. One more buzzword and it would’ve tipped over."
     elif score < 0.75:
-        return "High-grade fluff. Your LinkedIn game is strong, but your substance-to-jargon ratio is concerning."
+        return "Professional-grade word salad. HR is proud, physicists are crying."
     else:
-        return "Full cosmic nonsense. This text detached from Earth’s gravity a while ago."
+        return "Peak corporate synergy achieved. This text will look incredible on a slide deck!"
 
 
 def analyze_text(text: str) -> dict:
