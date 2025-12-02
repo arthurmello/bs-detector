@@ -17,12 +17,12 @@ COPY core/ ./core/
 COPY templates/ ./templates/
 
 # Expose Flask port
-EXPOSE 5000
+EXPOSE 8080
 
 # Set environment variable for Flask
 ENV FLASK_APP=main.py
 ENV FLASK_ENV=production
 
 # Run the Flask app using uv
-CMD ["uv", "run", "flask", "run", "--host", "0.0.0.0", "--port", "5000"]
+CMD ["uv", "run", "flask", "run", "--host", "0.0.0.0", "--port", "8080"]
 
